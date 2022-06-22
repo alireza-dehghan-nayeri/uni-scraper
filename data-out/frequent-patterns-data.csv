@@ -1,0 +1,106 @@
+,support,itemsets
+0,0.015267175572519083,frozenset({'adulthood'})
+1,0.015267175572519083,frozenset({'anatomi'})
+2,0.030534351145038167,frozenset({'assess'})
+3,0.015267175572519083,frozenset({'australian'})
+4,0.015267175572519083,frozenset({'biolog'})
+5,0.022900763358778626,frozenset({'biomed'})
+6,0.015267175572519083,frozenset({'bioscienc'})
+7,0.015267175572519083,frozenset({'cellular'})
+8,0.015267175572519083,frozenset({'chemic'})
+9,0.015267175572519083,frozenset({'chemist'})
+10,0.030534351145038167,frozenset({'comput'})
+11,0.015267175572519083,frozenset({'concept'})
+12,0.03816793893129771,frozenset({'conceptu'})
+13,0.015267175572519083,frozenset({'conceptualis'})
+14,0.022900763358778626,frozenset({'curriculum'})
+15,0.022900763358778626,frozenset({'data'})
+16,0.030534351145038167,frozenset({'design'})
+17,0.11450381679389313,frozenset({'develop'})
+18,0.015267175572519083,frozenset({'disciplinespecif'})
+19,0.015267175572519083,frozenset({'econom'})
+20,0.015267175572519083,frozenset({'ecosystem'})
+21,0.015267175572519083,frozenset({'electromechan'})
+22,0.015267175572519083,frozenset({'entrepreneuri'})
+23,0.015267175572519083,frozenset({'entrepreneurship'})
+24,0.030534351145038167,frozenset({'environment'})
+25,0.022900763358778626,frozenset({'fieldwork'})
+26,0.015267175572519083,frozenset({'french'})
+27,0.015267175572519083,frozenset({'germani'})
+28,0.015267175572519083,frozenset({'globalis'})
+29,0.061068702290076333,frozenset({'health'})
+30,0.015267175572519083,frozenset({'healthhealth'})
+31,0.015267175572519083,frozenset({'healthi'})
+32,0.03816793893129771,frozenset({'industri'})
+33,0.015267175572519083,frozenset({'introduct'})
+34,0.030534351145038167,frozenset({'languag'})
+35,0.015267175572519083,frozenset({'law'})
+36,0.015267175572519083,frozenset({'lawslaw'})
+37,0.015267175572519083,frozenset({'linguist'})
+38,0.015267175572519083,frozenset({'mathemat'})
+39,0.015267175572519083,frozenset({'midwiferi'})
+40,0.015267175572519083,frozenset({'musculoskelet'})
+41,0.015267175572519083,frozenset({'music'})
+42,0.015267175572519083,frozenset({'perform'})
+43,0.015267175572519083,frozenset({'physic'})
+44,0.015267175572519083,frozenset({'physiolog'})
+45,0.015267175572519083,frozenset({'physiotherapi'})
+46,0.15267175572519084,frozenset({'practic'})
+47,0.015267175572519083,frozenset({'practiceresearch'})
+48,0.015267175572519083,frozenset({'practition'})
+49,0.061068702290076333,frozenset({'profession'})
+50,0.015267175572519083,frozenset({'program'})
+51,0.015267175572519083,frozenset({'programm'})
+52,0.015267175572519083,frozenset({'programmingintroduct'})
+53,0.09923664122137404,frozenset({'research'})
+54,0.015267175572519083,frozenset({'scienc'})
+55,0.022900763358778626,frozenset({'scientif'})
+56,0.022900763358778626,frozenset({'social'})
+57,0.022900763358778626,frozenset({'sociolog'})
+58,0.015267175572519083,frozenset({'spreadsheet'})
+59,0.12213740458015267,frozenset({'student'})
+60,0.015267175572519083,frozenset({'teach'})
+61,0.04580152671755725,frozenset({'technolog'})
+62,0.015267175572519083,frozenset({'thermodynamics'})
+63,0.015267175572519083,frozenset({'thesisenvironment'})
+64,0.015267175572519083,frozenset({'tourism'})
+65,0.015267175572519083,frozenset({'tutori'})
+66,0.015267175572519083,frozenset({'vocabulari'})
+67,0.015267175572519083,"frozenset({'adulthood', 'health'})"
+68,0.015267175572519083,"frozenset({'adulthood', 'healthhealth'})"
+69,0.015267175572519083,"frozenset({'assess', 'practic'})"
+70,0.015267175572519083,"frozenset({'chemic', 'chemist'})"
+71,0.015267175572519083,"frozenset({'comput', 'program'})"
+72,0.015267175572519083,"frozenset({'comput', 'programm'})"
+73,0.015267175572519083,"frozenset({'concept', 'develop'})"
+74,0.015267175572519083,"frozenset({'conceptu', 'research'})"
+75,0.022900763358778626,"frozenset({'student', 'curriculum'})"
+76,0.022900763358778626,"frozenset({'develop', 'practic'})"
+77,0.03816793893129771,"frozenset({'develop', 'research'})"
+78,0.030534351145038167,"frozenset({'student', 'develop'})"
+79,0.015267175572519083,"frozenset({'disciplinespecif', 'practic'})"
+80,0.015267175572519083,"frozenset({'ecosystem', 'environment'})"
+81,0.015267175572519083,"frozenset({'entrepreneurship', 'entrepreneuri'})"
+82,0.015267175572519083,"frozenset({'fieldwork', 'research'})"
+83,0.015267175572519083,"frozenset({'healthhealth', 'health'})"
+84,0.015267175572519083,"frozenset({'health', 'healthi'})"
+85,0.022900763358778626,"frozenset({'health', 'practic'})"
+86,0.015267175572519083,"frozenset({'student', 'health'})"
+87,0.015267175572519083,"frozenset({'linguist', 'languag'})"
+88,0.015267175572519083,"frozenset({'vocabulari', 'languag'})"
+89,0.015267175572519083,"frozenset({'practic', 'perform'})"
+90,0.015267175572519083,"frozenset({'profession', 'practic'})"
+91,0.030534351145038167,"frozenset({'practic', 'research'})"
+92,0.05343511450381679,"frozenset({'student', 'practic'})"
+93,0.015267175572519083,"frozenset({'profession', 'research'})"
+94,0.015267175572519083,"frozenset({'profession', 'social'})"
+95,0.015267175572519083,"frozenset({'technolog', 'profession'})"
+96,0.015267175572519083,"frozenset({'programm', 'program'})"
+97,0.015267175572519083,"frozenset({'social', 'research'})"
+98,0.022900763358778626,"frozenset({'student', 'research'})"
+99,0.015267175572519083,"frozenset({'student', 'teach'})"
+100,0.015267175572519083,"frozenset({'technolog', 'student'})"
+101,0.015267175572519083,"frozenset({'adulthood', 'healthhealth', 'health'})"
+102,0.015267175572519083,"frozenset({'comput', 'programm', 'program'})"
+103,0.015267175572519083,"frozenset({'student', 'develop', 'practic'})"
+104,0.015267175572519083,"frozenset({'student', 'health', 'practic'})"
