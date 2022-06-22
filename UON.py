@@ -1,9 +1,9 @@
-from BaseCrawler import BaseCrawler
-from selenium import webdriver
-from selenium.webdriver.common.by import By
+import logging
 import requests
 from bs4 import BeautifulSoup
-import logging
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from BaseCrawler import BaseCrawler
 
 logger = logging.getLogger('__main__')
 
@@ -14,7 +14,7 @@ class UON(BaseCrawler):
     Abbreviation = 'UON'
     University_Homepage = 'https://www.newcastle.edu.au/'
 
-    # Below fields didn't find in the website
+    # Below fields were not found in the website
     References = None
     Projects = None
     Professor_Homepage = None
@@ -100,7 +100,16 @@ class UON(BaseCrawler):
                     assessment = assessment + '\n' + mid4.next_sibling.text
                     mid4 = mid4.next_sibling
 
-        return course_title, course_homepage, unit, description, outcome, assumed_knowledge, requisite, content, assessment
+        return (
+            course_title,
+            course_homepage,
+            unit, description,
+            outcome,
+            assumed_knowledge,
+            requisite,
+            content,
+            assessment
+        )
 
     def handler(self):
 
@@ -114,13 +123,36 @@ class UON(BaseCrawler):
                 department)
 
             for course in courses:
-                course_title, course_homepage, unit_count, description, outcome, required_skills, prerequisite, objective, scores = self.get_course_data(
-                    course)
-                # print(scores)
+                (
+                    course_title,
+                    course_homepage,
+                    unit_count,
+                    description,
+                    outcome,
+                    required_skills,
+                    prerequisite,
+                    objective,
+                    scores
+                ) = self.get_course_data(course)
+
                 self.save_course_data(
-                    self.University, self.Abbreviation, department_name, course_title, unit_count,
-                    self.Professor, objective, prerequisite, required_skills, outcome, self.References, scores,
-                    description, self.Projects, self.University_Homepage, course_homepage, self.Professor_Homepage
+                    self.University,
+                    self.Abbreviation,
+                    department_name,
+                    course_title,
+                    unit_count,
+                    self.Professor,
+                    objective,
+                    prerequisite,
+                    required_skills,
+                    outcome,
+                    self.References,
+                    scores,
+                    description,
+                    self.Projects,
+                    self.University_Homepage,
+                    course_homepage,
+                    self.Professor_Homepage
                 )
 
             logger.info(
