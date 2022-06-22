@@ -1,18 +1,15 @@
-from Preprocessor import Preprocessor
-from KeywordsExtractor import KeywordsExtractor
-from FrequentPatternExtractor import FrequentPatternExtractor
 import csv
-import pandas as pd
+
 import matplotlib.pyplot as plt
+import pandas as pd
 from wordcloud import WordCloud
 
+from FrequentPatternExtractor import extract_frequent_patterns_and_association_rules
+from KeywordsExtractor import extract_keyword
+from Preprocessor import preprocess
 
 plt.rcParams["figure.figsize"] = (15, 8)
-preprocessor = Preprocessor()
-frequentPatternExtractor = FrequentPatternExtractor()
-keywordsExtractor = KeywordsExtractor()
 keywords_dic = dict()
-
 
 # load the main data
 data = pd.read_csv('data-in/UON.csv')
@@ -22,22 +19,22 @@ courses_count = len(data.index)
 departments_count = len(data.groupby('Department'))
 department_courses_count = data.groupby('Department')['Course title'].count()
 
-stattistic_comaprison = csv.writer(
+statistic_comparison = csv.writer(
     open(f'data-out/departments-courses-count-comparison-data.csv', 'w', encoding='utf-8', newline=''))
-stattistic_comaprison.writerow(['Department', 'CoursesCount', 'Comparison'])
+statistic_comparison.writerow(['Department', 'CoursesCount', 'Comparison'])
 
-avg = int(courses_count/departments_count)
+avg = int(courses_count / departments_count)
 
-for deparment, coursecount in department_courses_count.items():
-    if int(coursecount) == avg:
-        stattistic_comaprison.writerow(
-            [deparment, coursecount, 'equal'])
-    elif int(coursecount) > avg:
-        stattistic_comaprison.writerow(
-            [deparment, coursecount, 'more than average'])
+for department, course_count in department_courses_count.items():
+    if int(course_count) == avg:
+        statistic_comparison.writerow(
+            [department, course_count, 'equal'])
+    elif int(course_count) > avg:
+        statistic_comparison.writerow(
+            [department, course_count, 'more than average'])
     else:
-        stattistic_comaprison.writerow(
-            [deparment, coursecount, 'less than average'])
+        statistic_comparison.writerow(
+            [department, course_count, 'less than average'])
 
 # visualization
 department_courses_count.to_csv(
@@ -62,7 +59,7 @@ plt.savefig('data-out/departments-courses-count-chart.png', dpi=400)
 
 # add a new col which consists of course title,objective,outcome and description of each course
 data['Courses Detail'] = data['Course title'] + \
-    data['Objective'] + data['Outcome'] + data['Description']
+                         data['Objective'] + data['Outcome'] + data['Description']
 
 # group data by department and its courses and their details
 department_data = data.groupby('Department')['Courses Detail'].sum()
@@ -76,12 +73,12 @@ output_file.writerow(['Department', 'Courses Detail'])
 for department, courses_detail in department_data.items():
     if type(courses_detail) == int:
         courses_detail = ''
-    preprocessed_courses_detail = preprocessor.preprocess(courses_detail)
+    preprocessed_courses_detail = preprocess(courses_detail)
     print(department + '-> preprocessed courses detail')
     output_file.writerow(
         [department, preprocessed_courses_detail])
 
-    keywords_dic[department] = keywordsExtractor.extract_keyword(
+    keywords_dic[department] = extract_keyword(
         preprocessed_courses_detail)
     print(department + '-> extracted courses detail keywords')
 
@@ -91,7 +88,7 @@ for value in keywords_dic.values():
     for key in value:
         all_keywords.append(key)
 print(all_keywords)
-keyword_string = (" ").join(all_keywords)
+keyword_string = " ".join(all_keywords)
 print(keyword_string)
 wordcloud = WordCloud(width=800, height=800,
                       background_color='white',
@@ -104,5 +101,5 @@ plt.axis("off")
 plt.tight_layout(pad=0)
 plt.savefig('data-out/keywords-word-cloud-chart.png', dpi=400)
 # frequent patterns and association rules
-frequentPatternExtractor.extractFrequentPatternsAndAssosiationRules(
+extract_frequent_patterns_and_association_rules(
     keywords_dic)
